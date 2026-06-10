@@ -6,50 +6,29 @@ def arg(a, b, c):
     if a == 0:
         if b == 0:
             if c == 0:
-                print("Уравнение имеет бесконечное множество решений (0 = 0)")
+                print("Бесконечное множество решений")
             else:
-                print(f"Уравнение не имеет решений ({c} != 0)")
+                print("Нет решений")
         else:
             x = -c / b
-            print(f"Это линейное уравнение: {b}x + {c} = 0")
-            print(f"Один корень: x = {x}")
+            print(f"Линейное уравнение. Корень: x = {x}")
         return
 
     D = b * b - 4 * a * c
-    print(f"Дискриминант D = {b}² - 4·{a}·{c} = {D}")
+    print(f"Дискриминант D = {D}")
 
     if D < 0:
         print("Нет действительных корней")
     elif D == 0:
         x = -b / (2.0 * a)
-        print(f"Один корень (кратности 2): x = {x}")
-        
-        print("Проверка по теореме Виета:")
-        print(f"x₁ + x₂ = {2*x} (должно быть -b/a = {-b / a})")
-        print(f"x₁ · x₂ = {x*x} (должно быть c/a = {c / a})")
+        print(f"Один корень: x = {x}")
     else:
         x1 = (-b + math.sqrt(D)) / (2.0 * a)
         x2 = (-b - math.sqrt(D)) / (2.0 * a)
-        
-        print("Корни уравнения:")
         print(f"x₁ = {x1}")
         print(f"x₂ = {x2}")
-        
-        print("Проверка по теореме Виета:")
-        sum_roots = x1 + x2
-        prod_roots = x1 * x2
-        expected_sum = -b / a
-        expected_prod = c / a
-        
-        print(f"x₁ + x₂ = {sum_roots} (должно быть -b/a = {expected_sum})")
-        print(f"x₁ · x₂ = {prod_roots} (должно быть c/a = {expected_prod})")
-        
-        if abs(sum_roots - expected_sum) < 1e-10 and abs(prod_roots - expected_prod) < 1e-10:
-            print("Проверка пройдена!")
-        else:
-            print("Проверка не пройдена!")
 
-a = 1
+a = 0
 b = -6
 c = 8
 
