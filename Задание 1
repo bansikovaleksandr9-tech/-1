@@ -14,6 +14,15 @@ def arg(a, b, c):
     else:
         x1 = (-b + math.sqrt(D)) / (2.0 * a)
         x2 = (-b - math.sqrt(D)) / (2.0 * a)
+    if: 
+        a==0:
+            if b==0:
+                    print('Уравнение не имеет смысла(a-0,b=0)')
+            else:
+                    x=-c/b
+                print(f"Это линейное уравнение: {b}x+{c}=0")
+                return x
+               
         
         print("Корни уравнения:")
         print(f"x₁ = {x1}")
